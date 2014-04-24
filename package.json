@@ -1,0 +1,23 @@
+{
+  "name": "unpm-meta-cache",
+  "version": "0.0.0",
+  "description": "cache unpm meta for all current modules in a single blob",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hayes/unpm-meta-cache.git"
+  },
+  "author": "Michael Hayes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hayes/unpm-meta-cache/issues"
+  },
+  "homepage": "https://github.com/hayes/unpm-meta-cache",
+  "devDependencies": {
+    "unpm-mem-backend": "0.3.6",
+    "tape": "2.12.3"
+  }
+}
