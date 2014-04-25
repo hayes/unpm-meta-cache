@@ -1,4 +1,7 @@
+var through = require('through')
+
 module.exports = setup
+module.exports.stream = stream
 
 function setup(unpm) {
   var stream = unpm.backend.createMetaStream()
@@ -40,5 +43,28 @@ function setup(unpm) {
   function removed(name) {
     delete cache[name]
     set()
+  }
+}
+
+function stream(unpm) {
+  var stream = through()
+
+  unpm.backend.get('unpm-meta-cache', emit)
+  unpm.backend.on('set', check)
+
+  return stream
+
+  function emit(data) {
+    if(data) {
+      return
+    }
+
+    stream.queue(data)
+  }
+
+  function check(name, data) {
+    if(name === 'unpm-meta-cache') {
+      emit(data)
+    }
   }
 }

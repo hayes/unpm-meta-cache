@@ -19,5 +19,8 @@
   "devDependencies": {
     "unpm-mem-backend": "0.3.6",
     "tape": "2.12.3"
+  },
+  "dependencies": {
+    "through": "2.3.4"
   }
 }
