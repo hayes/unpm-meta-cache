@@ -1,6 +1,6 @@
 {
   "name": "unpm-meta-cache",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "cache unpm meta for all current modules in a single blob",
   "main": "index.js",
   "scripts": {
