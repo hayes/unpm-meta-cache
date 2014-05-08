@@ -54,8 +54,8 @@ function stream(unpm) {
 
   return stream
 
-  function emit(data) {
-    if(data) {
+  function emit(err, data) {
+    if(err) {
       return
     }
 
@@ -64,7 +64,7 @@ function stream(unpm) {
 
   function check(name, data) {
     if(name === 'unpm-meta-cache') {
-      emit(data)
+      emit(null, data)
     }
   }
 }

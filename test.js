@@ -93,6 +93,28 @@ test('removing works', function(t) {
   }
 })
 
+test('stream property works', function(t) {
+  var db = backend()
+
+  t.plan(1)
+  init(db, function() {
+    db.once('set', start)
+    setup({backend: db})
+  })
+
+  function start() {
+    setup.stream({backend: db}).on('data', check)
+  }
+
+  function check(data) {
+    t.deepEqual(data, {
+        a: 1
+      , b: 2
+      , c: 3
+    })
+  }
+})
+
 function init(db, done) {
   var count = 0
 
